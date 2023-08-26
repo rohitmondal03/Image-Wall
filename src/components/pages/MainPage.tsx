@@ -21,7 +21,7 @@ const MainPage = () => {
 
     console.log(user);
 
-    if (!user) navigate("/dashboard")
+    if (user) navigate("/dashboard")
 
 
 
