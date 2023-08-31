@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-
 import { useUser } from "@supabase/auth-helpers-react"
 
 import SignOutBtn from "./signout-btn"
@@ -15,7 +14,7 @@ const Navbar = () => {
         <nav className="flex flex-row items-center justify-around py-7 border-b-2">
             <div>
                 <Link to={`/`}>
-                    <h1 className="text-3xl font-bold">ImageWall</h1>
+                    <span className="text-3xl font-bold">ImageWall</span>
                 </Link>
             </div>
 

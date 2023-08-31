@@ -16,6 +16,8 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toast": "^1.1.4",
     "@supabase/auth-helpers-react": "^0.4.2",
+    "@supabase/auth-ui-react": "^0.4.3",
+    "@supabase/auth-ui-shared": "^0.1.6",
     "@supabase/supabase-js": "^2.32.0",
     "@vitejs/plugin-react": "^4.0.4",
     "class-variance-authority": "^0.7.0",
@@ -25,7 +27,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.15.0",
     "tailwind-merge": "^1.14.0",
-    "tailwindcss-animate": "^1.0.6",
+    "tailwindcss-animate": "^1.0.7",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

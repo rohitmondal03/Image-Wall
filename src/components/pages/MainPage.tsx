@@ -1,17 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
-
 import { useUser } from "@supabase/auth-helpers-react";
 
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card";
 
 
 const MainPage = () => {
@@ -19,47 +9,33 @@ const MainPage = () => {
 
     const navigate = useNavigate();
 
-    console.log(user);
-
     if (user) navigate("/dashboard")
 
 
+    return (
+        <section className="flex flex-row items-center justify-center gap-x-9 px-56 h-[75vh]">
+            <div>
+                <h4 className="text-2xl text-amber-500">Welcome to...</h4>
+                <h1 className="text-7xl leading-relaxed underline decoration-zinc-300 dark:decoration-zinc-500">ImageWall</h1>
+                <p className="text-xl text-zinc-700 dark:text-zinc-300">ImageWall is a online platform that offers a visually appealing way for users to store and showcase their images safely online. To enhance user experience and ensure seamless image storage, we have integrated a server-side solution. ImageWall is the easiest way to store your images.</p>
 
-        return (
-            <Card className="text-center w-1/2 mx-auto mt-16">
-                <CardHeader>
-                    <CardTitle className="text-3xl font-bold">
-                        <Link to={`/`}>
-                            Welcome to ImageWall
-                        </Link>
-                    </CardTitle>
+                <>
+                    {user ? (
+                        null
+                    ) : (
+                        <Button className="mt-5">
+                            <Link to={`/signin`}>Sign In</Link>
+                        </Button>
+                    )}
+                </>
+            </div>
 
-                    <CardDescription>"Image Wall: Store Your Memories"</CardDescription>
-                </CardHeader>
-
-                <Separator orientation="horizontal" className="mb-6" />
-
-                <CardContent>
-                    The Image Wall app offers a visually appealing way for users to store
-                    and showcase their images. To enhance user experience and ensure
-                    seamless image storage, you can integrate a server-side solution. Get started by signing in to ImageWall.
-                </CardContent>
-
-                <CardFooter>
-                    <Button className="mx-auto">
-                        {user ? (
-                            <Link to={`/dashboard`}>
-                                Dashboard
-                            </Link>
-                        ) : (
-                            <Link to={"/signin"}>
-                                Sign In
-                            </Link>
-                        )}
-                    </Button>
-                </CardFooter>
-            </Card>
-        );
+            <img
+                src="./assets/mainImg.jpg"
+                className="h-80 rounded-3xl"
+            />
+        </section>
+    );
 };
 
 export default MainPage;

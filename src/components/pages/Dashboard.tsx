@@ -1,20 +1,18 @@
 import { CSSProperties, ChangeEvent, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { v4 as uuidv4 } from "uuid"
-
 import { useUser, useSupabaseClient } from "@supabase/auth-helpers-react"
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+
 import { Input } from "@/components/ui/input"
-import { Label } from "../ui/label"
-import { Separator } from "../ui/separator"
+import { Button } from "@/components/ui/button"
+import { Label } from "@/components/ui/label"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
 
 const CDNURL = "https://uxlsnutlidhrgriiozjf.supabase.co/storage/v1/object/public/Images/"
 
-const imageCSSProp: CSSProperties = { height: "25rem", aspectRatio: 3 / 5 }
-
+const imageCSSProp: CSSProperties = { height: "22rem", aspectRatio: 7 / 10 }
 
 
 const Dashboard = () => {
@@ -91,7 +89,6 @@ const Dashboard = () => {
                     </CardDescription>
                 </CardHeader>
 
-                <Separator orientation="horizontal" className="mb-5" />
 
                 <CardContent className="flex flex-row items-center gap-x-4">
                     <Label htmlFor="image">Click here to upload image:</Label>
