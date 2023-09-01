@@ -23,12 +23,12 @@ const Dashboard = () => {
 
     const navigate = useNavigate();
 
-
     if (!user) {
         navigate("/signin")
     }
+    
 
-
+    // FUNC. TO FETCH IMG
     async function getImages() {
         const { data } = await supabase
             .storage
@@ -45,6 +45,7 @@ const Dashboard = () => {
     }
 
 
+    // FUNC. FOR UPLOADING IMG
     async function uploadImage(e: ChangeEvent<HTMLInputElement>) {
         // @ts-ignore
         const file = e.target.files[0]
@@ -62,7 +63,8 @@ const Dashboard = () => {
     }
 
 
-    async function deletePic(imgName: any) {
+    // FOR DELETING PIC
+    async function deletePic(imgName: string) {
         const { error } = await supabase
             .storage
             .from("Images")
@@ -70,6 +72,18 @@ const Dashboard = () => {
 
         if (error) console.log(error);
         else getImages();
+    }
+
+
+    // FOR DOWNLOADING PIC
+    async function downloadPic(imgName: string) {
+        const { data, error } = await supabase
+            .storage
+            .from("Images")
+            .download(user?.id + "/" + imgName)
+
+        console.log("Error:--", error);
+        console.log("Data:--", data)
     }
 
 
@@ -128,6 +142,14 @@ const Dashboard = () => {
                                             onClick={() => deletePic(img.name)}
                                         >
                                             Delete
+                                        </Button>
+
+                                        <Button
+                                            variant={"outline"}
+                                            className="mx-auto"
+                                            onClick={() => downloadPic(img.name)}
+                                        >
+                                            Download
                                         </Button>
                                     </CardFooter>
                                 </Card>

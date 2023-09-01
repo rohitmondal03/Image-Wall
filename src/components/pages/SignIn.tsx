@@ -10,13 +10,15 @@ export default function Login() {
     const supabase = useSupabaseClient();
     const user = useUser();
 
-    if (user) {
-        navigate("/dashboard")
-    }
+    // useEffect(() => {
+        if (user) {
+            navigate("/dashboard")
+        }
+    // }, [])
 
 
     return (
-        <div className="mx-auto flex items-center justify-center h-[80vh] mt-6">
+        <div className="mx-auto flex items-center justify-center h-[75vh]">
             <AuthCard>
                 <h1 className="text-2xl font-bold">SignIn with your account</h1>
                 <Auth
@@ -25,7 +27,7 @@ export default function Login() {
                         theme: ThemeSupa,
                     }}
                     providers={["google", 'github', "discord"]}
-                    redirectTo="/dashboard"
+                    // redirectTo="/dashboard"
                     onlyThirdPartyProviders
                 />
             </AuthCard>
