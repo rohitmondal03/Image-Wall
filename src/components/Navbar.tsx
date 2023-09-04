@@ -15,11 +15,11 @@ const Navbar = () => {
         <nav className="flex flex-row items-center justify-around py-7 border-b-2">
             <div>
                 <Link to={`/`}>
-                    <span className="text-3xl font-bold">ImageWall</span>
+                    <span className="text-2xl sm:text-3xl font-bold">ImageWall</span>
                 </Link>
             </div>
 
-            <div className="flex flex-row items-center justify-center gap-x-7">
+            <div className="flex flex-row items-center justify-center gap-x-4 sm:gap-x-7">
                 {user ? (
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
