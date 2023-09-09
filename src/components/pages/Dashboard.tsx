@@ -92,7 +92,7 @@ const Dashboard = () => {
 
     return (
         <>
-            <Card className="mx-auto text-center space-y-6 sm:space-y-0 my-16 px-2 sm:px-10 md:px-0 md:w-1/2">
+            <Card className="mx-auto text-center space-y-6 sm:space-y-0 my-16 md:px-0 w-[95vw] md:w-1/2">
                 <CardHeader>
                     <CardTitle>Upload Images to your ImageWall</CardTitle>
 

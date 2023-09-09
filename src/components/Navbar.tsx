@@ -26,13 +26,9 @@ const Navbar = () => {
                             <h1 className="bg-zinc-600 text-white px-4 py-2 rounded-full cursor-pointer">{user.email?.toUpperCase().charAt(0)}</h1>
                         </DropdownMenuTrigger>
 
-                        <DropdownMenuContent className="gap-y-3">
-                            <DropdownMenuItem>
-                                Dashboard
-                            </DropdownMenuItem>
-                            <DropdownMenuItem>
-                                <SignOutBtn />
-                            </DropdownMenuItem>
+                        <DropdownMenuContent className="gap-y-3 flex flex-col p-2">
+                            <Link to={`/dashboard`}>Dashboard</Link>
+                            <SignOutBtn />
                         </DropdownMenuContent>
                     </DropdownMenu>
                 ) : (
