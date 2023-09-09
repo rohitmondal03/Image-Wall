@@ -4,7 +4,7 @@ import { useUser } from "@supabase/auth-helpers-react"
 import SignOutBtn from "./signout-btn"
 import { ModeToggle } from "./mode-toggle"
 import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 
 const Navbar = () => {
